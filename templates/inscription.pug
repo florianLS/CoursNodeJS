@@ -1,0 +1,35 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    link(href="/css/styles.css" rel="stylesheet" type="text/css")
+    title Inscription
+  body
+    h1 Inscrivez-vous ici !
+    form(method="POST")
+      div
+        label(for="civilite") Civilité:
+        | M.
+        input(type="radio" name="gender" value="M.")
+        | Madame
+        input(type="radio" name="gender" value="Madame")
+        br
+      div
+        label(for="nom") Nom: 
+        input(type="text" name="nom")
+      div
+        label(for="prenom") Prénom: 
+        input(type="text" name="prenom")
+      div
+        label(for="email") Email: 
+        input(type="email" name="email")
+      div
+        label(for="password") Mot de passe: 
+        input(type="password" name="password")
+      div
+        label(for="envoyer") Envoyer: 
+        input(type="submit" name="envoyer")
+
+    script(src=process.env.BROWSER_REFRESH_URL)
