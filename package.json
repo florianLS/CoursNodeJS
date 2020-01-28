@@ -1,0 +1,17 @@
+{
+  "name": "projet_ecommerce",
+  "version": "1.0.0",
+  "description": "Projet Ecommerce avec express",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-refresh index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flo",
+  "license": "ISC",
+  "dependencies": {
+    "browser-refresh": "^1.7.3",
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  }
+}
