@@ -15,8 +15,11 @@
     "browser-refresh": "^1.7.3",
     "chalk": "^3.0.0",
     "express": "^4.17.1",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-flash-message": "^1.0.5",
     "express-session": "^1.17.0",
     "mongoose": "^5.8.10",
+    "passport": "^0.4.1",
     "pug": "^2.0.4"
   }
 }

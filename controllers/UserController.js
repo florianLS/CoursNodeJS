@@ -11,11 +11,12 @@ module.exports = class UserController {
         let User = new UserModel();
         let UserEmail = await User.mailVerify(req.body.email);
         if(UserEmail) {
-            let mailExist = "Cet Email est déjà utilisé!";
+            req.flash('error', 'Cet Email est déjà utilisé !');
             response.redirect('/inscription');
         }
         else {
             User.create(req.body.gender, req.body.nom, req.body.prenom, req.body.email, req.body.password);
+            req.flash('connect', 'Inscription réussi ! Welcome : )');
             response.redirect('/')
         }
 

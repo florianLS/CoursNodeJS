@@ -8,9 +8,17 @@ html(lang="fr")
     title Mon pug
   body
     h1 Bienvenue sur mon site E-Commerce !
-    nav
-      a(href="/inscription") Inscription
-      a(href="/connexion") Connexion
 
-      
-    script(src=process.env.BROWSER_REFRESH_URL)
+    if messages.connect
+      span= messages.connect
+
+    if session.user
+      h2 Salut #{session.user.prenom}
+
+    nav
+      if session.user
+        a(href="/deconnexion") Déconnexion
+      else
+        a(href="/inscription") Inscription
+        a(href="/connexion") Connexion
+    script(src="process.env.BROWSER_REFRESH_URL")

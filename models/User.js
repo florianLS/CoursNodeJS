@@ -40,14 +40,24 @@ module.exports = class User {
        })
     }
 
-    connexionVerify(pseudo, password) {
+    connexionVerify(mail, password) {
+        
         return new Promise((resolve, rejected) => {
             // On recherche l'email
 
            Model.findOne({ email : mail }).exec((err, user) => {
                // Si il y a une erreur (pas de résultat)
                if (err !== null || user === null) resolve(false);
-               resolve(true);
+               
+               else {
+                    if(bcrypt.compareSync(password, user.password)) {
+                        resolve(user);
+                    }
+                    else {
+                        resolve(false);
+                    }
+               }
+
            })
        })
     }

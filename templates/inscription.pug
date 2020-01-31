@@ -8,6 +8,10 @@ html(lang="fr")
     title Inscription
   body
     h1 Inscrivez-vous ici !
+
+    if messages.error
+      span= messages.error
+      
     form(method="POST")
       div
         label(for="civilite") Civilité:

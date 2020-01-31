@@ -26,3 +26,11 @@ nav a {
     font-size: 22px;
     font-weight: bold;
 }
+
+span {
+    display: block;
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

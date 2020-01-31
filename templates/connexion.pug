@@ -8,13 +8,17 @@ html(lang="fr")
     title Connexion
   body
     h1 Connectez-vous ici !
+
+    if messages.error
+      span= messages.error
+
     form(method="POST")
       div
         label(for="pseudo") Pseudo: 
         input(type="text" name="pseudo")
       div
         label(for="password") Mot de passe: 
-        input(type="text" name="password")
+        input(type="password" name="password")
       div
         label(for="envoyer") Connexion
         input(type="submit" name="envoyer")

@@ -29,6 +29,12 @@ module.exports = (app) => {
         let UserConnexion = new Controller();
         UserConnexion.verifyConnexion(req, res);
     })
+
+    app.get('/deconnexion', (req, res) => {
+        let Controller = require("../controllers/ConnexionController.js");
+        let UserConnexion = new Controller();
+        UserConnexion.deconnexion(req, res);
+    })
 }
 
 

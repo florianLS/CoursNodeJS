@@ -10,14 +10,22 @@ module.exports = class ConnexionController {
         let User = new UserModel();
         let UserConnexion = await User.connexionVerify(req.body.pseudo, req.body.password);
         if(UserConnexion) {
-            let UserExist = "Vous êtes connecté!";
-            response.redirect('/');
+            req.session.user = {
+                prenom : UserConnexion.prenom,
+                nom:  UserConnexion.nom
+            };
+            req.flash('connect', 'Vous êtes connecté! Welcome : )');
+            response.render('index');
         }
         else {
-            let UserNoExist = "Identifiant ou mot de passe incorrect !";
-            response.redirect('/connexion')
+            req.flash('error', 'Cet identifiant ou ce mot de passe n\'existe pas!');
+            response.render('connexion')
         }
     }
 
-
+    deconnexion(req, response) {
+        req.session.user = null;
+        req.flash('connect', 'Vous êtes déconnecté. A bientôt !');
+        response.redirect('/');
+    }
 }
